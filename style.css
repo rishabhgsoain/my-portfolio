@@ -1,0 +1,296 @@
+/* Root Variables for Colors */
+:root {
+  --primary-color: #3f00ff;   /* Purple */
+  --secondary-color: #e30078; /* Pink */
+  --text-color: #333;
+  --bg-color: #ffffff;
+}
+
+/* Global Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Navigation */
+.header {
+  position: fixed;
+  width: 100%;
+  background-color: var(--bg-color);
+  padding: 1rem 2rem;
+  z-index: 1000;
+  border-bottom: 1px solid #eee;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-menu a {
+  color: var(--text-color);
+  font-size: 1rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: var(--primary-color);
+}
+
+/* Sections */
+section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+section.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 6rem; /* Account for fixed header */
+}
+
+.hero-content {
+  max-width: 50%;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  background-color: var(--secondary-color);
+  color: #fff;
+  font-size: 0.8rem;
+  border-radius: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.hero-content h1 {
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+
+.gradient-text {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: 0.5rem;
+}
+
+/* Buttons */
+.buttons {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: var(--secondary-color);
+}
+
+.btn-outline {
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  background: none;
+}
+
+.btn-outline:hover {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+/* Hero Image */
+.hero-image {
+  position: relative;
+  width: 50%;
+  text-align: center;
+}
+
+.hero-image img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Decorative Dots */
+.decorative-elements {
+  position: relative;
+}
+
+.dots {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  display: block;
+}
+
+.dots-left {
+  left: -30px;
+  top: 20px;
+  background: radial-gradient(circle, var(--primary-color) 40%, transparent 60%);
+}
+
+.dots-right {
+  right: -30px;
+  bottom: 20px;
+  background: radial-gradient(circle, var(--secondary-color) 40%, transparent 60%);
+}
+
+/* Skills Section */
+.skills ul.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.skills ul.skills-list li {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+/* Projects Section: Grid of Tiles */
+/* .project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+} */
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* One column per row */
+  gap: 1rem; /* Adjust gap as needed */
+}
+
+
+.project-tile {
+  padding: 1.5rem;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  transition: box-shadow 0.3s ease;
+  background: #fafafa;
+}
+
+.project-tile:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.project-tile h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  color: var(--primary-color);
+}
+
+/* Research Section: Grid of Items */
+.research-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* One column per row */
+  gap: 1rem; /* Adjust gap as needed */
+}
+
+
+.research-item {
+  padding: 1.5rem;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  transition: box-shadow 0.3s ease;
+  background: #fafafa;
+}
+
+.research-item:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.research-item h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  color: var(--primary-color);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 2rem;
+  background-color: var(--bg-color);
+  border-top: 1px solid #eee;
+  margin-top: 2rem;
+}
+
+.footer-icons {
+  margin-bottom: 1rem;
+}
+
+.footer-icon {
+  margin: 0 0.5rem;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+}
+
+.footer-icon:hover {
+  color: var(--secondary-color);
+}
